@@ -6,4 +6,4 @@ Produced during the Microsoft OneWeek hackathon in 2018. We welcome contribution
 
 ## License
 
-This software is licensed under the MIT license. See LICENSE.md for more details.
+This software is licensed under the MIT license. See LICENSE for more details.
