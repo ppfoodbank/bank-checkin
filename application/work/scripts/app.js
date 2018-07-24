@@ -1,4 +1,3 @@
-
 (function() {
     'use strict';
 
@@ -15,14 +14,33 @@
             });
         }
     }
-      
+    
+    var uuidv4 = uuidv4();
+
     var app = {
         isLoading: true,
         spinner: document.querySelector('.loader'),
         container: document.querySelector('.main'),
         addDialog: document.querySelector('.dialog-container'),
         cacheName: 'pmfb-checkin-data-v1',
-        session: {},
+        //object to store user data collected during the session
+        session: {
+            "key": uuidv4,
+            "zipcode": "",
+            "age": "",
+            "firstVisit": "",
+            "housingStatus":"N/A",
+            "familySize":
+            {
+                "0to2": "N/A",
+                "3to18": "N/A",
+                "19to54": "N/A",
+                "55Plus": "N/A"
+            },
+            "ethnicGroups": [],
+            "gender": "N/A",
+            "preferredLang": "N/A"
+        }
     };
 
     document.getElementById('startCheckin').addEventListener('click', function() {
@@ -40,4 +58,14 @@
         app.session = {};
         window.location = 'checkin.html';
     }
+
+
+    //Save session data to storage and send to DB
+    app.commit() = function(){
+
+    }
+
+
+
+
 })();

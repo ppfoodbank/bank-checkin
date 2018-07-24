@@ -24,4 +24,11 @@ self.addEventListener('fetch', function(e) {
       return response || fetch(e.request);
     })
   );
-}
+});
+
+self.addEventListener("message", function(e) {
+  console.log('[Service Worker] Message ', e.id, e.session);
+  e.respondWith(
+
+  )
+});
