@@ -103,7 +103,8 @@ body {
 }
 
 .content {
-    height: 70%;
+    overflow: scroll;
+    height: 650px;
     padding: 16px;
     position: relative;
     box-sizing: border-box;
@@ -162,12 +163,12 @@ body {
 }
 
 .left {
-    padding-right: 100px;
+    padding-right: 10%;
     display: inline-block;
 }
 
 .right {
-    padding-left: 100px;
+    padding-left: 10%;
     display: inline-block;
 }
 
@@ -175,4 +176,21 @@ body {
     font-size: 0.8em;
     text-align: center;
     color: white;
+}
+
+.question-button-container {
+    margin-top: 40px;
+}
+
+.square-button {
+    width: 180px;
+    height: 180px;
+    margin: auto 20%;
+    font-size: 20pt;
+    background-color: white;
+    border: 1px solid;
+}
+
+.button-row {
+    margin-bottom: 20px;
 }

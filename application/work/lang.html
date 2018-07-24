@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pike Place Food Bank</title>
+    <link rel="stylesheet" type="text/css" href="styles/inline.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- TODO add manifest here -->
+
+</head>
+
+<body>
+
+    <header class="header">
+        <button class="button" id="butCancel" aria-label="Cancel">Cancel</button>
+    </header>
+
+    <main class="main">
+        <div class="content">
+            <div class="text">What is your preferred language</div>
+            <div class="loc-text">¿Cuál es tu idioma preferido?</div>
+            <div class="loc-text">(Simplified Chinese)</div>
+            <div class="btn-group-vertical">
+                <div class="spacer"> </div>
+                <button class="butGroup">Spanish</button>
+                <button class="butGroup">Korean</button>
+                <div class="spacer"> </div>
+                <button class="butGroup">Cantonese</button>
+                <button class="butGroup">German</button>
+                <div class="spacer"> </div>
+                <button class="butGroup">Mandarin</button>
+                <button class="butGroup">Arabic</button>
+                <div class="spacer"> </div>
+                <button class="butGroup">Filipino Dialect</button>
+                <button class="butGroup">Russian</button>
+                <div class="spacer"> </div>
+                <button class="butGroup">Vietnamese</button>
+                <button class="butGroup">Japanese</button>
+                <div class="spacer"> </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="left">
+            <button class="button" id="langBack" aria-label="Cancel">Back</button>
+        </div>
+        <div class="right">
+            <button class="button" id="langNext" aria-label="Cancel">Next</button>
+        </div>
+        <div class="text">I choose not to answer</div>
+        <div class="loc-text">(Text)</div>
+    </footer>
+
+    <script src="scripts/app.js" async></script>
+    <script src="scripts/lang.js" async></script>
+
+</body>
+
+</html>
