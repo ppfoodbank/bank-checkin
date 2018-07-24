@@ -178,6 +178,22 @@ body {
     background-color: #3f51b5;
 }
 
+.other-text {
+    text-align: left;
+    display: inline-block;
+    font-size: 20pt;
+}
+
+.other-field {
+    display: inline-block;
+}
+
+.form-control {
+    display: inline-block;
+    font-size: 20pt;
+    width: 35%;
+}
+
 .footer {
     background: #3E479D;
     width: 100%;
