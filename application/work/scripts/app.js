@@ -23,7 +23,13 @@
         addDialog: document.querySelector('.dialog-container'),
         cacheName: 'pmfb-checkin-data-v1',
         session: {},
+        numCheckin: 0
     };
+
+    // TODO: Could do a per-page custom load of div elements into the content space...
+    window.onload = function() {
+        document.getElementById('numCheckin').innerHTML = 'Check-in count: ' + app.numCheckin;
+    }
 
     document.getElementById('startCheckin').addEventListener('click', function() {
         app.loadNextPage('id', uuidv4(), 'question1.html');

@@ -247,3 +247,9 @@ body {
     padding-left: 100px;
     display: inline-block;
 }
+
+.footer-text {
+    font-size: 16pt;
+    text-align: center;
+    color: white;
+}
