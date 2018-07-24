@@ -55,6 +55,6 @@ app.cancelCheckin = function() {
 }
 
 //Save session data to storage and send to DB
-app.commit() = function(){
+app.commit = function(){
 
 }
