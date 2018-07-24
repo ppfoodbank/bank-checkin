@@ -1,21 +1,20 @@
-
 (function() {
     'use strict';
 
     function uuidv4() {
         if ('crypto' in window) {
-            return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+            return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
                 (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
             )
-        }
-        else {
+        } else {
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                var r = Math.random() * 16 | 0,
+                    v = c == 'x' ? r : (r & 0x3 | 0x8);
                 return v.toString(16);
             });
         }
     }
-      
+
     var app = {
         isLoading: true,
         spinner: document.querySelector('.loader'),
@@ -25,8 +24,29 @@
         session: {},
     };
 
+    //Buttons
+    document.getElementById('butCancel').addEventListener('click', function() {
+        app.loadNextPage('id', uuidv4(), 'checkin.html');
+    });
+
     document.getElementById('startCheckin').addEventListener('click', function() {
-        app.loadNextPage('id', uuidv4(), 'question1.html');
+        app.loadNextPage('id', uuidv4(), 'zip.html');
+    });
+
+    document.getElementById('ethnicBack').addEventListener('click', function() {
+        app.loadNextPage('id', uuidv4(), 'family.html');
+    });
+
+    document.getElementById('ethnicNext').addEventListener('click', function() {
+        app.loadNextPage('id', uuidv4(), 'gender.html');
+    });
+
+    document.getElementById('langBack').addEventListener('click', function() {
+        app.loadNextPage('id', uuidv4(), 'ethnic.html');
+    });
+
+    document.getElementById('langNext').addEventListener('click', function() {
+        app.loadNextPage('id', uuidv4(), 'confirm.html');
     });
 
     // Assign session key and advance

@@ -75,14 +75,14 @@ body {
 }
 
 .text {
-    font-size: 60pt;
+    font-size: 25pt;
     text-align: center;
     font-weight: bold;
     color: #3E479D
 }
 
 .loc-text {
-    font-size: 60pt;
+    font-size: 25pt;
     text-align: center;
     color: #3E479D
 }
@@ -100,6 +100,7 @@ body {
 }
 
 .content {
+    overflow: scroll;
     height: 650px;
     padding: 16px;
     position: relative;
@@ -226,11 +227,11 @@ body {
 }
 
 .left {
-    padding-right: 100px;
+    padding-right: 10%;
     display: inline-block;
 }
 
 .right {
-    padding-left: 100px;
+    padding-left: 10%;
     display: inline-block;
 }
