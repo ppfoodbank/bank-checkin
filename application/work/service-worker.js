@@ -33,7 +33,5 @@ self.addEventListener('fetch', function(e) {
 
 self.addEventListener("message", function(e) {
   console.log('[Service Worker] Message ', e.id, e.session);
-  e.respondWith(
   //TODO: caching logic
-  )
 });

@@ -66,64 +66,25 @@ body {
 .header {
     width: 100%;
     height: 100px;
+    text-align: right;
     color: #FFF;
     background: #3E479D;
     position: fixed;
     font-size: 20px;
     padding: 16px 16px 0 16px;
-    will-change: transform;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-box-align: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-    -webkit-align-content: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-    -webkit-transition: -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
-    transition: -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
-    transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
-    transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s, -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
-    z-index: 1000;
 }
 
 .text {
-    font-size: 60pt;
+    font-size: 25pt;
     text-align: center;
     font-weight: bold;
     color: #3E479D
 }
 
 .loc-text {
-    font-size: 60pt;
+    font-size: 25pt;
     text-align: center;
     color: #3E479D
-}
-
-.header__title {
-    font-weight: 400;
-    font-size: 40px;
-    text-align: center;
-    margin: 0;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
 }
 
 .main {
@@ -139,12 +100,13 @@ body {
 }
 
 .content {
+    overflow: scroll;
     height: 650px;
     padding: 16px;
     position: relative;
     box-sizing: border-box;
     background: #fff;
-    border-radius: 2px;
+    border-radius: 4px;
     margin: 30px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
@@ -222,14 +184,31 @@ body {
     height: 100px;
     text-align: center;
     padding-bottom: 200px;
+    padding-top: 10px;
     color: #FFF;
 }
 
 .button {
     height: 65px;
     border: none;
+    border-radius: 4px;
     background-color: #F36D38;
     color: white;
+    padding: 15px 32px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20pt;
+    cursor: pointer;
+}
+
+.butGroup {
+    width: 100%;
+    height: 65px;
+    border: none;
+    border-radius: 4px;
+    color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -238,12 +217,44 @@ body {
     cursor: pointer;
 }
 
+.butGroup:focus {
+    background-color: #F36D38;
+    color: white;
+}
+
+.spacer {
+    padding-top: 5px;
+}
+
 .left {
-    padding-right: 100px;
+    padding-right: 10%;
     display: inline-block;
 }
 
 .right {
-    padding-left: 100px;
+    padding-left: 10%;
     display: inline-block;
+}
+
+.footer-text {
+    font-size: 16pt;
+    text-align: center;
+    color: white;
+}
+
+.question-button-container {
+    margin-top: 40px;
+}
+
+.square-button {
+    width: 180px;
+    height: 180px;
+    margin: auto 20%;
+    font-size: 20pt;
+    background-color: white;
+    border: 1px solid;
+}
+
+.button-row {
+    margin-bottom: 20px;
 }
