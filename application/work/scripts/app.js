@@ -49,6 +49,10 @@
             document.getElementById('numCheckin').innerHTML = 'Check-in count: ' + app.numCheckin;
         }
         //Buttons
+    document.getElementById('zipcodeBackButton').addEventListener('click', function() {
+        app.loadPreviousPage('checkin.html');
+    });
+
     document.getElementById('butCancel').addEventListener('click', function() {
         app.loadNextPage('id', uuidv4(), 'checkin.html');
     });
@@ -72,6 +76,10 @@
     document.getElementById('langNext').addEventListener('click', function() {
         app.loadNextPage('id', uuidv4(), 'confirm.html');
     });
+
+    app.loadPreviousPage = function(page) {
+        window.location = page;
+    }
 
     // Assign session key and advance
     app.loadNextPage = function(key, value, page) {
