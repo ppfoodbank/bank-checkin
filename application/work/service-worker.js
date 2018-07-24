@@ -17,6 +17,11 @@ self.addEventListener('install', function(e) {
   );
 });
 
+self.addEventListener('activate', function(e)
+{
+
+});
+
 self.addEventListener('fetch', function(e) {
   console.log('[Service Worker] Fetch ', e.request.url);
   e.respondWith(
@@ -29,6 +34,6 @@ self.addEventListener('fetch', function(e) {
 self.addEventListener("message", function(e) {
   console.log('[Service Worker] Message ', e.id, e.session);
   e.respondWith(
-
+  //TODO: caching logic
   )
 });
