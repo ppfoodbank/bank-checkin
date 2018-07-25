@@ -1,15 +1,23 @@
+
 (function() {
     var sessionData = {
         "zipCode": "",
         "ageBracket": "",
         "isDuplicated": "",
         "isHoused": "N/A",
+<<<<<<< HEAD
         "FamilySize": {
             "Category1Count": "N/A",
             "Category2Count": "N/A",
             "Category3Count": "N/A",
             "Category4Count": "N/A"
         },
+=======
+        "Category1Count": "N/A",
+        "Category2Count": "N/A",
+        "Category3Count": "N/A",
+        "Category4Count": "N/A",
+>>>>>>> master
         "Race": "N/A",
         "Gender": "N/A",
         "SpokenLanguage": "N/A"
@@ -62,23 +70,27 @@
         window.location = 'index.html';
     }
 
-    //Save session data to storage and send to DB
-    app.commit = function() {
-        //TODO: Test and if needed, change design to first store then try to send to DB
-        var jsonDataList = [JSON.stringify(app.session)];
 
-        var request = new XMLHttpRequest();
-        request.open("POST", app.dbUrl, true);
+//Save session data to storage and send to DB
+app.commit = function(){
+    //TODO: Test and if needed, change design to first store then try to send to DB
+    var jsonDataList =  JSON.stringify([app.session]);
 
-        //Add headers
-        request.setRequestHeader("apiKey", app.apiKey);
-        request.setRequestHeader("correlationId", app.uuidv4);
+    var request = new XMLHttpRequest();
 
-        request.send(jsonDataList);
-    }
+    request.open("POST", window.app.dbUrl);
+    //Add headers 
+    request.setRequestHeader("window.app.apiKey", app.apiKey);
+    request.setRequestHeader("correlationId", ""); 
+    request.setRequestHeader("Content-Type", "application/json");
+    //request.setRequestHeader("Content-Type", "text/plain");
 
-    window.addEventListener('load', function() {
-        console.log('Loading the cookie...');
-        app.loadCookie();
-    });
+    request.send(jsonDataList);
+}
+
+window.addEventListener('load', function() {
+    console.log('Loading the cookie...');
+    app.loadCookie();
+});
+
 })();
