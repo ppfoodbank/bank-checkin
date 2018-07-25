@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
@@ -25,23 +26,23 @@
             <div class="question-heading loc-text">
                 <div class="text">What is your age?</div>
                 <div class="loc-text">¿Cuál es tu edad?</div>
-                <div class="loc-text">(simplified Chinese)</div>
+                <div class="loc-text">你几岁</div>
             </div>
             <div class="question-button-container">
                 <div class="row button-row">
                     <div class="col-md">
-                        <button class="btn square-button" id="ageFirst" type="submit">0-2</button>
+                        <button class="butGroup square-button" id="ageFirst" type="submit">0-2</button>
                     </div>
                     <div class="col-md">
-                        <button class="btn square-button" id="ageSecond" type="submit">3-18</button>
+                        <button class="butGroup square-button" id="ageSecond" type="submit">3-18</button>
                     </div>
                 </div>
                 <div class="row button-row">
                     <div class="col-md">
-                        <button class="btn square-button" id="ageThird" type="submit">19-54</button>
+                        <button class="butGroup square-button" id="ageThird" type="submit">19-54</button>
                     </div>
                     <div class="col-md">
-                        <button class="btn square-button" id="ageFourth" type="submit">55+</button>
+                        <button class="butGroup square-button" id="ageFourth" type="submit">55+</button>
                     </div>
                 </div>
             </div>
@@ -57,10 +58,9 @@
         </div>
     </footer>
 
-    <!-- Uncomment the line below when ready to test with fake data -->
-    <script src="scripts/app.js" async></script>
-    <script src="scripts/age.js" async></script>
 
 </body>
-
+    <script src="node_modules/js-cookie/src/js.cookie.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/age.js"></script>
 </html>

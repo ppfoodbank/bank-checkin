@@ -22,4 +22,8 @@
     document.getElementById('genderFemaleButton').addEventListener('click', function() {
         gender = 'female';
     });
+
+    document.getElementById('genderOtherButton').addEventListener('click', function() {
+        gender = 'other';
+    });
 })();

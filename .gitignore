@@ -8,3 +8,5 @@
 /api/pmfbapi/pmfbapi/bin
 /api/pmfbapi/pmfbapi/obj
 /api/pmfbapi/pmfbapi/Properties/PublishProfiles
+
+.vscode
