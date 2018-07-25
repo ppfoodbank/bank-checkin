@@ -1,8 +1,6 @@
 (function() {
     'use strict'
 
-    console.log('Executing checkin.js');
-
     window.onload = function() {
         document.getElementById('numCheckin').innerHTML = 'Check-in count: ' + app.numCheckin;
     }

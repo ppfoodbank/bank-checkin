@@ -12,7 +12,7 @@
     });
 
     document.getElementById('visitNextButton').addEventListener('click', function() {
-        app.loadNextPage('firstVisit', firstVisit, 'housed.html');
+        app.loadNextPage('isDuplicated', !firstVisit, 'housed.html');
     });
 
     document.getElementById('visitYesButton').addEventListener('click', function() {

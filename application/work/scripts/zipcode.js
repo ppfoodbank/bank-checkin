@@ -24,6 +24,6 @@
     });
 
     document.getElementById('zipcodeNextButton').addEventListener('click', function(){
-        app.loadNextPage("zipcode", zipcode, "age.html");
+        app.loadNextPage('zipCode', zipcode, 'age.html');
     });
 })();
