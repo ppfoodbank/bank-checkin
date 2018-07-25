@@ -27,7 +27,7 @@
         [HttpPost("adduser")]
         [EnableCors("MyPolicy")]
 
-        public IActionResult adduser([FromBody]MyCollectionMain checkinInfo)
+        public IActionResult adduser([FromBody]CheckinInfo checkinInfo)
         {
             try
             {
