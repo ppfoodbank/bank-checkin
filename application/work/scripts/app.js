@@ -25,15 +25,15 @@ var app = {
     cacheName: 'pmfb-checkin-data-v1', //TODO: REmove?
     userlKey: uuidv4,
     session: {
-        "zipCode": "",
-        "ageBracket": "",
-        "isDuplicated": "",
-        "isHoused":"N/A",
+        "zipCode": "N/A",
+        "ageBracket": "N/A",
+        "isDuplicated": false,
+        "isHoused":false,
         "FamilySizeCategory1Count" : "N/A",  //0 to 2
         "FamilySizeCategory2Count" : "N/A", // 3 to 18
         "FamilySizeCategory3Count":"N/A", // 19 to 54
         "FamilySizeCategory4Count":"N/A", // 55+
-        "Race": [],
+        "Race": "N/A",
         "Gender": "N/A",
         "SpokenLanguage": "N/A"
     },
@@ -59,7 +59,7 @@ app.cancelCheckin = function() {
 //Save session data to storage and send to DB
 app.commit = function(){
     //TODO: Test and if needed, change design to first store then try to send to DB
-    var jsonDataList = [JSON.stringify(app.session)];
+    var jsonDataList =  JSON.stringify([app.session]);
 
     var request = new XMLHttpRequest();
     request.open("POST", app.dbUrl, true);
@@ -67,6 +67,7 @@ app.commit = function(){
     //Add headers 
     request.setRequestHeader("apiKey", app.apiKey);
     request.setRequestHeader("correlationId", app.uuidv4); 
+    request.setRequestHeader("Content-Type", "application/json");
 
     request.send(jsonDataList);
 }
