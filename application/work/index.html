@@ -11,25 +11,24 @@
 </head>
 
 <body>
-    <header class="header">
-        <h1 class="header__title">Welcome to Pike Market Food Bank</h1>
-    </header>
+    <header class="header">Welcome to Pike Market Food Bank</header>
 
     <main class="main">
         <div class="content">
             <div class="text">Welcome</div>
             <div class="loc-text">Bienvenido</div>
             <div class="loc-text">(Simplified Chinese)</div>
-            <center><img src="./images/CheckIn.png"/ width="33%" height="33%"/></center>
+            <div style="line-height: 200%"><br/></div>
+            <center>
+                <img src="./images/CheckIn.png"/ width="66%" height="66%"/>
+                <br/><br/>
+                <button class="button" id="startCheckin" aria-label="Start checkin">Begin Check-in</button>
+             </center>
         </div>
     </main>
 
     <footer class="footer">
-        <center>
-            <button class="button" id="startCheckin" aria-label="Start checkin">Begin Check-in</button>
-            <br/><br/>
-            <div id="numCheckin" class="footer-text" />
-        </center>
+        <center> <div id="numCheckin" class="footer-text" /> </center>
     </footer>
 </body>
 <script src="node_modules/js-cookie/src/js.cookie.js"></script>
