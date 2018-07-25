@@ -1,12 +1,10 @@
 (function() {
     'use strict'
 
-    console.log('Executing checkin.js');
-
     window.onload = function() {
         document.getElementById('numCheckin').innerHTML = 'Check-in count: ' + app.numCheckin;
     }
-    
+
     document.getElementById('startCheckin').addEventListener('click', function() {
         app.loadNextPage('id', uuidv4(), 'zipcode.html');
     });
@@ -16,10 +14,10 @@
         navigator.serviceWorker
             .register('./service-worker.js')
             .then(function() { console.log('Service Worker Registered'); });
-
-        // Then later, request syncs
-        navigator.serviceWorker.ready.then(function(swRegistration) {
-            return swRegistration.sync.register('syncDB');
-        });
     }
+
+    // Then later, request syncs
+    navigator.serviceWorker.ready.then(function(swRegistration) {
+        return swRegistration.sync.register('syncDB');
+    });
 })();

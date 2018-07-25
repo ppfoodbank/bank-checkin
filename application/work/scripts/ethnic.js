@@ -1,17 +1,61 @@
 (function() {
     'use strict'
 
-    window.onload = function() {
-        document.getElementById('numCheckin').innerHTML = 'Check-in count: ' + app.numCheckin;
-    }
-    
-    // TODO change this to save the actual values instead of id
-    document.getElementById('ethnicBack').addEventListener('click', function() {
-        app.loadNextPage('id', uuidv4(), 'family.html');
+    var ethnicGroup = null;
+
+    document.getElementById('butCancel').addEventListener('click', function() {
+        app.cancelCheckin();
     });
 
-    // TODO change this to save the actual values instead of id
+    //Selections
+    document.getElementById('shl').addEventListener('click', function() {
+        this.classList.toggle('active');
+        ethnicGroup = null;
+    });
+
+    document.getElementById('ian').addEventListener('click', function() {
+        this.classList.toggle('active');
+        ethnicGroup = null;
+    });
+
+    document.getElementById('aaa').addEventListener('click', function() {
+        this.classList.toggle('active');
+        ethnicGroup = null;
+    });
+
+    document.getElementById('bao').addEventListener('click', function() {
+        this.classList.toggle('active');
+        ethnicGroup = null;
+    });
+
+    document.getElementById('nhpi').addEventListener('click', function() {
+        this.classList.toggle('active');
+        ethnicGroup = null;
+    });
+
+    document.getElementById('wc').addEventListener('click', function() {
+        this.classList.toggle('active');
+        ethnicGroup = null;
+    });
+
+    //Other Text Field
+    document.getElementById('o').addEventListener('click', function() {
+        this.classList.toggle('active');
+    });
+
+    document.getElementById('ethnic-input').addEventListener('oninput', function() {
+        document.getElementById('o').classList.toggle('active');
+    });
+
+    //Navigation
+    document.getElementById('ethnicBack').addEventListener('click', function() {
+        app.loadPreviousPage('family.html');
+    });
+
     document.getElementById('ethnicNext').addEventListener('click', function() {
-        app.loadNextPage('id', uuidv4(), 'gender.html');
+        if ((document.getElementById('ethnic-input').nodeValue).length > 0) {
+            ethnicGroup
+        }
+        app.loadNextPage('ethnicGroups', ethnicGroup, 'gender.html');
     });
 })();

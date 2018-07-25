@@ -25,7 +25,6 @@ body {
     height: 100%;
     width: 100%;
     font-family: 'Helvetica', 'Verdana', sans-serif;
-    font-size: 20pt;
     font-weight: 400;
     font-display: optional;
     color: #444;
@@ -61,45 +60,50 @@ body {
     -webkit-align-content: stretch;
     -ms-flex-line-pack: stretch;
     align-content: stretch;
-    background: red;
+    background: #ececec;
 }
 
 .header {
     width: 100%;
-    height: 10%;
-    text-align: center;
+    height: 100px;
+    text-align: right;
     color: #FFF;
     background: #3E479D;
     position: fixed;
-    font-size: 5vh;
-    font-weight: bold;
-    padding: 1vh 1vw 0 1vw;
+    font-size: 20px;
+    padding: 16px 16px 0 16px;
+}
+
+.other-text {
+    font-size: 25px;
+    display: inline-block;
+}
+
+.form-control {
+    font-size: 25px;
+    display: inline-block;
 }
 
 .text {
-    font-size: 3em;
+    font-size: 25pt;
     text-align: center;
     font-weight: bold;
     color: #3E479D
 }
 
 .loc-text {
-    font-size: 2.5em;
+    font-size: 25pt;
     text-align: center;
     color: #3E479D
 }
 
 .main {
-    top: 10%;
+    padding-top: 100px;
     background: #3E479D;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    position: relative;
 }
 
 .content {
@@ -109,18 +113,18 @@ body {
     position: relative;
     box-sizing: border-box;
     background: #fff;
-    border-radius: 10px;
-    margin: 3vw;
+    border-radius: 4px;
+    margin: 30px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 .footer {
     background: #3E479D;
     width: 100%;
-    height: 10%;
+    height: 100px;
     text-align: center;
-    padding-bottom: 5vh;
-    padding-top: 1vh;
+    padding-bottom: 200px;
+    padding-top: 10px;
     color: #FFF;
 }
 
@@ -135,7 +139,7 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1em;
+    font-size: 20pt;
     cursor: pointer;
 }
 
@@ -149,11 +153,30 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1em;
+    font-size: 20pt;
     cursor: pointer;
 }
 
 .butGroup:focus {
+    background-color: #F36D38;
+    color: white;
+}
+
+.radioBut {
+    width: 100%;
+    height: 65px;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20pt;
+    cursor: pointer;
+}
+
+.active {
     background-color: #F36D38;
     color: white;
 }
@@ -173,7 +196,7 @@ body {
 }
 
 .footer-text {
-    font-size: 0.8em;
+    font-size: 16pt;
     text-align: center;
     color: white;
 }
