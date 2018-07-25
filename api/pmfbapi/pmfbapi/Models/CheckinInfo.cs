@@ -1,5 +1,12 @@
-﻿namespace pmfbapi.Models
+﻿using System.Collections.Generic;
+
+namespace pmfbapi.Models
 {
+    public class MyCollectionMain
+    {
+        public List<CheckinInfo> sessionList { get; set; }
+    }
+
     public class CheckinInfo
     {
         public string ZipCode { get; set; }

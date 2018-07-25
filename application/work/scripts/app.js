@@ -3,8 +3,8 @@
     var sessionData = {
         "zipCode": "",
         "ageBracket": "",
-        "isDuplicated": "",
-        "isHoused": "N/A",
+        "isDuplicated": false,
+        "isHoused": false,
         "Category1Count": "N/A",
         "Category2Count": "N/A",
         "Category3Count": "N/A",
@@ -61,15 +61,14 @@
 //Save session data to storage and send to DB
 app.commit = function(){
     //TODO: Test and if needed, change design to first store then try to send to DB
-    var jsonDataList =  JSON.stringify([app.session]);
+    var jsonDataList =  JSON.stringify(app.session);
 
     var request = new XMLHttpRequest();
-
     request.open("POST", window.app.dbUrl);
     //Add headers 
     request.setRequestHeader("window.app.apiKey", app.apiKey);
     request.setRequestHeader("correlationId", ""); 
-    request.setRequestHeader("Content-Type", "application/json");
+    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     //request.setRequestHeader("Content-Type", "text/plain");
 
     request.send(jsonDataList);
