@@ -65,7 +65,7 @@ body {
 
 .header {
     width: 100%;
-    height: 2em;
+    height: 10vh;
     font-weight: bold;
     text-align: center;
     color: #FFF;
@@ -129,8 +129,8 @@ body {
     width: 100%;
     height: 2em;
     text-align: center;
-    padding-bottom: 200px;
-    padding-top: 10px;
+    padding-bottom: 12vh;
+    padding-top: 1vh;
     color: #FFF;
 }
 
