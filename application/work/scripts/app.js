@@ -68,7 +68,6 @@ app.commit = function(){
     var jsonDataList =  JSON.stringify(app.session);
 
     var request = new XMLHttpRequest();
-
     request.open("POST", window.app.dbUrl);
     //Add headers 
     request.setRequestHeader("apiKey", app.apiKey);
