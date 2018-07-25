@@ -9,13 +9,41 @@
     document.getElementById('butCancel').addEventListener('click', function() {
         app.cancelCheckin();
     });
-    
-    document.getElementById('familyBackButton').addEventListener('click', function() {
-        app.loadPreviousPage('housed.html');
+
+    document.getElementById('familyFirst-input').addEventListener('focus', function() {
+        document.getElementById('familyFirstButton').classList.add('active');
     });
 
-    document.getElementById('familyNextButton').addEventListener('click', function() {
-        app.loadNextPage('familySize', {}, 'ethnic.html');
+    document.getElementById('familyFirst-input').addEventListener('blur', function() {
+        document.getElementById('familyFirstButton').classList.remove('active');
+    });
+
+    document.getElementById('familySecond-input').addEventListener('focus', function() {
+        document.getElementById('familySecondButton').classList.add('active');
+    });
+
+    document.getElementById('familySecond-input').addEventListener('blur', function() {
+        document.getElementById('familySecondButton').classList.remove('active');
+    });
+
+    document.getElementById('familyThird-input').addEventListener('focus', function() {
+        document.getElementById('familyThirdButton').classList.add('active');
+    });
+
+    document.getElementById('familyThird-input').addEventListener('blur', function() {
+        document.getElementById('familyThirdButton').classList.remove('active');
+    });
+
+    document.getElementById('familyFourth-input').addEventListener('focus', function() {
+        document.getElementById('familyFourthButton').classList.add('active');
+    });
+
+    document.getElementById('familyFourth-input').addEventListener('blur', function() {
+        document.getElementById('familyFourthButton').classList.remove('active');
+    });
+
+    document.getElementById('familyBackButton').addEventListener('click', function() {
+        app.loadPreviousPage('housed.html');
     });
 
     document.getElementById('familyNextButton').addEventListener('click', function() {

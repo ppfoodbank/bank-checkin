@@ -61,9 +61,8 @@
         app.loadPreviousPage('gender.html');
     });
 
-    // TODO change this to save the actual values instead of id
     document.getElementById('langNext').addEventListener('click', function() {
-        var input = document.getElementById('ethnic-input').value;
+        var input = document.getElementById('lang-input').value;
         if (input.length > 0) {
             spokenLang = input;
         }

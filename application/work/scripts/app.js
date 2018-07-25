@@ -13,7 +13,7 @@ function uuidv4() {
     }
 }
 
-var uuidv4 = uuidv4();
+//var uuidv4 = uuidv4();
 
 var app = {
     isLoading: true,
@@ -28,12 +28,12 @@ var app = {
         "zipCode": "",
         "ageBracket": "",
         "isDuplicated": "",
-        "isHoused":"N/A",
-        "FamilySizeCategory1Count" : "N/A",  //0 to 2
-        "FamilySizeCategory2Count" : "N/A", // 3 to 18
-        "FamilySizeCategory3Count":"N/A", // 19 to 54
-        "FamilySizeCategory4Count":"N/A", // 55+
-        "Race": [],
+        "isHoused": "N/A",
+        "FamilySizeCategory1Count": "N/A", //0 to 2
+        "FamilySizeCategory2Count": "N/A", // 3 to 18
+        "FamilySizeCategory3Count": "N/A", // 19 to 54
+        "FamilySizeCategory4Count": "N/A", // 55+
+        "Race": "N/A",
         "Gender": "N/A",
         "SpokenLanguage": "N/A"
     },
@@ -57,16 +57,16 @@ app.cancelCheckin = function() {
 }
 
 //Save session data to storage and send to DB
-app.commit = function(){
+app.commit = function() {
     //TODO: Test and if needed, change design to first store then try to send to DB
     var jsonDataList = [JSON.stringify(app.session)];
 
     var request = new XMLHttpRequest();
     request.open("POST", app.dbUrl, true);
 
-    //Add headers 
+    //Add headers
     request.setRequestHeader("apiKey", app.apiKey);
-    request.setRequestHeader("correlationId", app.uuidv4); 
+    request.setRequestHeader("correlationId", app.uuidv4);
 
     request.send(jsonDataList);
 }
