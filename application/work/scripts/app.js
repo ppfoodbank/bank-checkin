@@ -63,14 +63,16 @@ app.commit = function(){
     //TODO: Test and if needed, change design to first store then try to send to DB
     var jsonDataList =  JSON.stringify([app.session]);
 
-        //Add headers
-        request.setRequestHeader("apiKey", app.apiKey);
-        request.setRequestHeader("correlationId", app.uuidv4);
+    var request = new XMLHttpRequest();
 
+    request.open("POST", window.app.dbUrl);
     //Add headers 
-    request.setRequestHeader("apiKey", app.apiKey);
-    request.setRequestHeader("correlationId", app.uuidv4); 
+    request.setRequestHeader("window.app.apiKey", app.apiKey);
+    request.setRequestHeader("correlationId", ""); 
     request.setRequestHeader("Content-Type", "application/json");
+    //request.setRequestHeader("Content-Type", "text/plain");
+
+    request.send(jsonDataList);
 }
 
 window.addEventListener('load', function() {
