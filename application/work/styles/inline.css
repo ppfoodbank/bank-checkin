@@ -1,7 +1,3 @@
-Skip to content Search or jump to… Pull requests Issues Marketplace Explore @BryceJawnson Sign out 3 0 0 ppfoodbank/bank-checkin Code Issues 0 Pull requests 0 Projects 0 Wiki Insights bank-checkin/application/work/styles/inline.css e96720d 3 hours ago @mitchellholly mitchellholly Add basic pages for age,
-family,
-first visit,
-gender and housed @sptramer @mitchellholly 260 lines (230 sloc) 5.42 KB
 /*
  * Copyright 2016 Google Inc.
  *
@@ -162,6 +158,25 @@ body {
 }
 
 .butGroup:focus {
+    background-color: #F36D38;
+    color: white;
+}
+
+.radioBut {
+    width: 100%;
+    height: 65px;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20pt;
+    cursor: pointer;
+}
+
+.active {
     background-color: #F36D38;
     color: white;
 }
