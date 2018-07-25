@@ -9,7 +9,7 @@
     });
 
     document.getElementById('zipcodeBackButton').addEventListener('click', function() {
-        app.loadPreviousPage('checkin.html');
+        app.loadPreviousPage('index.html');
     });
 
     document.getElementById('zipcodeFirst').addEventListener('click', function() {

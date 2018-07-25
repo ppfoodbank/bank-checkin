@@ -55,7 +55,7 @@
     // Clear session and return to checkin
     app.cancelCheckin = function() {
         app.clearCookie();
-        window.location = 'checkin.html';
+        window.location = 'index.html';
     }
 
     //Save session data to storage and send to DB
