@@ -1,4 +1,3 @@
-
 (function() {
      var checkinInfo = 
      {"sessionList" : []};
@@ -49,6 +48,10 @@
         window.location = page;
     }
 
+    app.skipPage = function(page) {
+        window.location = page;
+    }
+
     // Assign session key, write cookie, and advance
     app.loadNextPage = function(key, value, page) {
         app.session[key] = value;
@@ -71,6 +74,7 @@ app.commit = function(){
     var request = new XMLHttpRequest();
 
     request.open("POST", window.app.dbUrl);
+
     //Add headers 
     request.setRequestHeader("apiKey", app.apiKey);
     request.setRequestHeader("correlationId", ""); 
@@ -80,9 +84,9 @@ app.commit = function(){
     request.send(jsonDataList);
 }
 
-window.addEventListener('load', function() {
-    console.log('Loading the cookie...');
-    app.loadCookie();
-});
+    window.addEventListener('load', function() {
+        console.log('Loading the cookie...');
+        app.loadCookie();
+    });
 
 })();
