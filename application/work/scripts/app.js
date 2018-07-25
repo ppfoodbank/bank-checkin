@@ -10,7 +10,7 @@
             "Category3Count": "N/A",
             "Category4Count": "N/A"
         },
-        "Race": [],
+        "Race": "N/A",
         "Gender": "N/A",
         "SpokenLanguage": "N/A"
     }
@@ -42,6 +42,10 @@
     }
 
     app.loadPreviousPage = function(page) {
+        window.location = page;
+    }
+
+    app.skipPage = function(page) {
         window.location = page;
     }
 

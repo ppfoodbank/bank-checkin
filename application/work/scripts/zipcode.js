@@ -43,6 +43,6 @@
         if (otherButtonSelected) {
             zipcode = document.getElementById('zipcodeOther-input').value;
         }
-        app.loadNextPage('zipCode', zipcode, 'age.html');
+        if (zipcode != -1) app.loadNextPage('zipCode', zipcode, 'age.html');
     });
 })();

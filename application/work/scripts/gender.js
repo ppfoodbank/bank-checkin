@@ -6,13 +6,17 @@
     document.getElementById('butCancel').addEventListener('click', function() {
         app.cancelCheckin();
     });
-    
+
     document.getElementById('genderBackButton').addEventListener('click', function() {
         app.loadPreviousPage('ethnic.html');
     });
 
     document.getElementById('genderNextButton').addEventListener('click', function() {
         app.loadNextPage('Gender', gender, 'lang.html');
+    });
+
+    document.getElementById('butNot').addEventListener('click', function() {
+        app.skipPage('lang.html');
     });
 
     document.getElementById('genderMaleButton').addEventListener('click', function() {

@@ -182,10 +182,22 @@ body {
     display: inline-block;
 }
 
+.bottom {
+    padding-top: 5%;
+}
+
 .footer-text {
     font-size: 16pt;
     text-align: center;
     color: white;
+}
+
+.butNot {
+    font-size: 18pt;
+    color: white;
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
 }
 
 .question-button-container {

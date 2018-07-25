@@ -12,7 +12,7 @@
     });
 
     document.getElementById('ageNextButton').addEventListener('click', function() {
-        app.loadNextPage('ageBracket', age, 'visit.html');
+        if (age != -1) app.loadNextPage('ageBracket', age, 'visit.html');
     });
 
     document.getElementById('ageFirst').addEventListener('click', function() {

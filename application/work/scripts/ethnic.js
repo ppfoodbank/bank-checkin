@@ -40,6 +40,10 @@
         document.getElementById('o').classList.remove("active");
     });
 
+    document.getElementById('butNot').addEventListener('click', function() {
+        app.skipPage('gender.html');
+    });
+
     //Navigation
     document.getElementById('ethnicBack').addEventListener('click', function() {
         app.loadPreviousPage('family.html');

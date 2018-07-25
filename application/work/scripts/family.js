@@ -42,6 +42,10 @@
         document.getElementById('familyFourthButton').classList.remove('active');
     });
 
+    document.getElementById('butNot').addEventListener('click', function() {
+        app.skipPage('ethnic.html');
+    });
+
     document.getElementById('familyBackButton').addEventListener('click', function() {
         app.loadPreviousPage('housed.html');
     });
