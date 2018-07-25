@@ -1,23 +1,13 @@
-
 (function() {
     var sessionData = {
         "zipCode": "",
         "ageBracket": "",
         "isDuplicated": "",
         "isHoused": "N/A",
-<<<<<<< HEAD
-        "FamilySize": {
-            "Category1Count": "N/A",
-            "Category2Count": "N/A",
-            "Category3Count": "N/A",
-            "Category4Count": "N/A"
-        },
-=======
         "Category1Count": "N/A",
         "Category2Count": "N/A",
         "Category3Count": "N/A",
         "Category4Count": "N/A",
->>>>>>> master
         "Race": "N/A",
         "Gender": "N/A",
         "SpokenLanguage": "N/A"
@@ -71,26 +61,26 @@
     }
 
 
-//Save session data to storage and send to DB
-app.commit = function(){
-    //TODO: Test and if needed, change design to first store then try to send to DB
-    var jsonDataList =  JSON.stringify([app.session]);
+    //Save session data to storage and send to DB
+    app.commit = function() {
+        //TODO: Test and if needed, change design to first store then try to send to DB
+        var jsonDataList = JSON.stringify([app.session]);
 
-    var request = new XMLHttpRequest();
+        var request = new XMLHttpRequest();
 
-    request.open("POST", window.app.dbUrl);
-    //Add headers 
-    request.setRequestHeader("window.app.apiKey", app.apiKey);
-    request.setRequestHeader("correlationId", ""); 
-    request.setRequestHeader("Content-Type", "application/json");
-    //request.setRequestHeader("Content-Type", "text/plain");
+        request.open("POST", window.app.dbUrl);
+        //Add headers
+        request.setRequestHeader("window.app.apiKey", app.apiKey);
+        request.setRequestHeader("correlationId", "");
+        request.setRequestHeader("Content-Type", "application/json");
+        //request.setRequestHeader("Content-Type", "text/plain");
 
-    request.send(jsonDataList);
-}
+        request.send(jsonDataList);
+    }
 
-window.addEventListener('load', function() {
-    console.log('Loading the cookie...');
-    app.loadCookie();
-});
+    window.addEventListener('load', function() {
+        console.log('Loading the cookie...');
+        app.loadCookie();
+    });
 
 })();
