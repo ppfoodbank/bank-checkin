@@ -62,19 +62,20 @@
     }
 
 
-//Save session data to storage and send to DB
-app.commit = function(){
-    //TODO: Test and if needed, change design to first store then try to send to DB
-    var jsonDataList =  JSON.stringify(app.session);
+    //Save session data to storage and send to DB
+    app.commit = function(){
+        //TODO: Test and if needed, change design to first store then try to send to DB
+        var jsonDataList =  JSON.stringify(app.session);
 
-    var request = new XMLHttpRequest();
-    request.open("POST", window.app.dbUrl);
-    //Add headers 
-    request.setRequestHeader("apiKey", app.apiKey);
-    request.setRequestHeader("correlationId", ""); 
-    request.setRequestHeader("Content-Type", "application/json");
+        var request = new XMLHttpRequest();
+        request.open("POST", window.app.dbUrl);
+        
+        //Add headers 
+        request.setRequestHeader("apiKey", app.apiKey);
+        request.setRequestHeader("correlationId", ""); 
+        request.setRequestHeader("Content-Type", "application/json");
 
-    request.send(jsonDataList);
+        request.send(jsonDataList);
     }
 
     window.addEventListener('load', function() {
