@@ -19,7 +19,13 @@ self.addEventListener('install', function(e) {
 
 self.addEventListener('activate', function(e)
 {
-
+  console.log('[ServiceWorker] Activate');
+  e.waitUntil(
+    caches.open(cacheName).then(function(cache) {
+      console.log('[ServiceWorker] Caching app shell');
+      return cache.addAll(filesToCache);
+    })
+  );
 });
 
 self.addEventListener('fetch', function(e) {
