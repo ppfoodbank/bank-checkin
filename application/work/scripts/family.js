@@ -1,11 +1,15 @@
 (function() {
     'use strict'
 
-    window.onload = function() {
-        document.getElementById('numCheckin').innerHTML = 'Check-in count: ' + app.numCheckin;
-    }
+    document.getElementById('butCancel').addEventListener('click', function() {
+        app.cancelCheckin();
+    });
     
     document.getElementById('familyBackButton').addEventListener('click', function() {
         app.loadPreviousPage('housed.html');
+    });
+
+    document.getElementById('familyNextButton').addEventListener('click', function() {
+        app.loadNextPage('familySize', {}, 'ethnic.html');
     });
 })();

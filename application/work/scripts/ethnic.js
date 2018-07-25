@@ -1,9 +1,9 @@
 (function() {
     'use strict'
 
-    window.onload = function() {
-        document.getElementById('numCheckin').innerHTML = 'Check-in count: ' + app.numCheckin;
-    }
+    document.getElementById('butCancel').addEventListener('click', function() {
+        app.cancelCheckin();
+    });
     
     // TODO change this to save the actual values instead of id
     document.getElementById('ethnicBack').addEventListener('click', function() {
