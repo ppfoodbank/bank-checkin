@@ -1,6 +1,8 @@
 (function() {
     'use strict'
 
+    console.log('Executing checkin.js');
+
     window.onload = function() {
         document.getElementById('numCheckin').innerHTML = 'Check-in count: ' + app.numCheckin;
     }
@@ -14,5 +16,10 @@
         navigator.serviceWorker
             .register('./service-worker.js')
             .then(function() { console.log('Service Worker Registered'); });
-        }
-    });
+
+        // Then later, request syncs
+        navigator.serviceWorker.ready.then(function(swRegistration) {
+            return swRegistration.sync.register('syncDB');
+        });
+    }
+})();
