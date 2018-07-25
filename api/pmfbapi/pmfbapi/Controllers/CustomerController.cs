@@ -31,6 +31,13 @@ namespace pmfbapi.Controllers
         {
             try
             {
+                var apiKey = Request.Headers["apiKey"];
+                var correlationId = Request.Headers["correlationId"];
+
+                //Authenticate
+                if (!string.Equals(AppConfigStore.ApiKey, apiKey))
+                    return this.Unauthorized();
+
                 // Validate request details
                 if (CheckinInfo == null || 
                     CheckinInfo?.Count() < 1 ||
