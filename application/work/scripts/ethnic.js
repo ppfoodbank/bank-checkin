@@ -33,7 +33,7 @@
     });
 
     document.getElementById('o').addEventListener('click', function() {
-        ethnicGroup = null;
+        ethnicGroup = document.getElementById('ethnic-input').nodeValue;
     });
 
     //Navigation

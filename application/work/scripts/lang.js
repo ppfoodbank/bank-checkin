@@ -49,7 +49,7 @@
     });
 
     document.getElementById('other').addEventListener('click', function() {
-        preferredLang = document.getElementById('other-input').nodeValue;
+        preferredLang = document.getElementById('lang-input').nodeValue;
     });
 
     //Navigation
