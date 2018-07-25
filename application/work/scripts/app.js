@@ -5,10 +5,12 @@
         "ageBracket": "",
         "isDuplicated": "",
         "isHoused":"N/A",
-        "FamilySizeCategory1Count" : "N/A",  //0 to 2
-        "FamilySizeCategory2Count" : "N/A", // 3 to 18
-        "FamilySizeCategory3Count":"N/A", // 19 to 54
-        "FamilySizeCategory4Count":"N/A", // 55+
+        "FamilySize": {
+            "Category1Count": "N/A",
+            "Category2Count": "N/A",
+            "Category3Count": "N/A",
+            "Category4Count": "N/A"
+        },
         "Race": [],
         "Gender": "N/A",
         "SpokenLanguage": "N/A"
