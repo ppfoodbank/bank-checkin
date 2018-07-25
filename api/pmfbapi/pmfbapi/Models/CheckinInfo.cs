@@ -1,4 +1,6 @@
-﻿namespace pmfbapi.Models
+﻿using System.Collections.Generic;
+
+namespace pmfbapi.Models
 {
     public class CheckinInfo
     {
