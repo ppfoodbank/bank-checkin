@@ -1,12 +1,12 @@
 (function() {
     'use strict'
 
-    window.onload = function() {
+    window.addEventListener('load', function() {
         document.getElementById('numCheckin').innerHTML = 'Check-in count: ' + app.numCheckin;
-    }
+    });
 
     document.getElementById('startCheckin').addEventListener('click', function() {
-        app.loadNextPage('id', uuidv4(), 'zipcode.html');
+        window.location = 'zipcode.html';
     });
 
     // Register service worker
