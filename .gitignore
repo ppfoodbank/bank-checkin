@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/api/pmfbapi/.vs/pmfbapi
+/api/pmfbapi/pmfbapi/obj/Debug/netcoreapp2.0
+/api/pmfbapi/.vs/config
+/api/pmfbapi/pmfbapi/bin
+/api/pmfbapi/pmfbapi/obj
+/api/pmfbapi/pmfbapi/Properties/PublishProfiles
