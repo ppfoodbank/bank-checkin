@@ -1,6 +1,9 @@
-
 (function() {
-    var sessionData = {
+     var checkinInfo = 
+     {"sessionList" : []};
+
+    checkinInfo["sessionList"].push(
+        {
         "zipCode": "",
         "ageBracket": "",
         "isDuplicated": false,
@@ -12,7 +15,8 @@
         "Race": "N/A",
         "Gender": "N/A",
         "SpokenLanguage": "N/A"
-    }
+        }
+    );   
 
     window.app = {
         cookieName: 'sessionData',
@@ -21,7 +25,7 @@
         dbUrl: "https://pmfbapi.azurewebsites.net/api/Customer/adduser/",
         apiKey: "hE6U7t7PcEZviH17SJAh",
         userId: undefined,
-        session: sessionData,
+        session: checkinInfo,
         numCheckin: 0
     };
 
@@ -41,6 +45,10 @@
     }
 
     app.loadPreviousPage = function(page) {
+        window.location = page;
+    }
+
+    app.skipPage = function(page) {
         window.location = page;
     }
 
@@ -65,8 +73,9 @@ app.commit = function(){
 
     var request = new XMLHttpRequest();
     request.open("POST", window.app.dbUrl);
+
     //Add headers 
-    request.setRequestHeader("window.app.apiKey", app.apiKey);
+    request.setRequestHeader("apiKey", app.apiKey);
     request.setRequestHeader("correlationId", ""); 
     request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     //request.setRequestHeader("Content-Type", "text/plain");
@@ -74,9 +83,9 @@ app.commit = function(){
     request.send(jsonDataList);
 }
 
-window.addEventListener('load', function() {
-    console.log('Loading the cookie...');
-    app.loadCookie();
-});
+    window.addEventListener('load', function() {
+        console.log('Loading the cookie...');
+        app.loadCookie();
+    });
 
 })();

@@ -48,6 +48,10 @@
         spokenLang = "japanese";
     });
 
+    document.getElementById('butNot').addEventListener('click', function() {
+        app.skipPage('confirm.html');
+    });
+
     document.getElementById('lang-input').addEventListener('focus', function() {
         document.getElementById('other').classList.add("active");
     });
