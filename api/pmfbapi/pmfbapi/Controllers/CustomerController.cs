@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using pmfbapi.Models;
-
-namespace pmfbapi.Controllers
+﻿namespace pmfbapi.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Net;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+    using pmfbapi.Models;
+
     [Produces("application/json")]
     [Route("api/customer")]
     [RequireHttps]
@@ -27,21 +23,28 @@ namespace pmfbapi.Controllers
         // POST: api/Customer
         [RequireHttps]
         [HttpPost("adduser")]
-        public IActionResult adduser([FromBody]List<CheckinInfo> CheckinInfo)
+        public IActionResult adduser([FromBody]List<CheckinInfo> checkinInfo)
         {
             try
             {
+                var apiKey = Request.Headers["apiKey"];
+                var correlationId = Request.Headers["correlationId"];
+
+                // Authenticate
+                if (!string.Equals(AppConfigStore.ApiKey, apiKey))
+                    return this.Unauthorized();
+
                 // Validate request details
-                if (CheckinInfo == null || 
-                    CheckinInfo?.Count() < 1 ||
-                    CheckinInfo.Any(i => string.IsNullOrEmpty(i.AgeBracket)) ||
-                    CheckinInfo.Any(i => string.IsNullOrEmpty(i.ZipCode)))
+                if (checkinInfo == null || 
+                    checkinInfo?.Count() < 1 ||
+                    checkinInfo.Any(i => string.IsNullOrEmpty(i.AgeBracket)) ||
+                    checkinInfo.Any(i => string.IsNullOrEmpty(i.ZipCode)))
                 {
                     return this.BadRequest("Empty request object");
                 }
                     
                 // Save to db
-                foreach (var item in CheckinInfo)
+                foreach (var item in checkinInfo)
                 {
                     dbContext.Database.ExecuteSqlCommand(
                     "dbo.uspAddUser @p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10",
