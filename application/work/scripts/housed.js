@@ -20,6 +20,6 @@
     });
 
     document.getElementById('housedNextButton').addEventListener('click', function() {
-        app.loadNextPage('housingStatus', housed, 'family.html');
+        app.loadNextPage('isHoused', housed, 'family.html');
     });
 })();
