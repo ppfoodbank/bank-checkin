@@ -1,10 +1,9 @@
-
 (function() {
     var sessionData = {
         "zipCode": "",
         "ageBracket": "",
         "isDuplicated": "",
-        "isHoused":"N/A",
+        "isHoused": "N/A",
         "FamilySize": {
             "Category1Count": "N/A",
             "Category2Count": "N/A",
@@ -15,7 +14,7 @@
         "Gender": "N/A",
         "SpokenLanguage": "N/A"
     }
- 
+
     window.app = {
         cookieName: 'sessionData',
         container: document.querySelector('.main'),
@@ -31,7 +30,7 @@
         Cookies.set(app.cookieName, app.session);
     }
 
-    app.clearCookie = function() { 
+    app.clearCookie = function() {
         Cookies.remove(app.cookieName);
     }
 
@@ -60,16 +59,16 @@
     }
 
     //Save session data to storage and send to DB
-    app.commit = function(){
+    app.commit = function() {
         //TODO: Test and if needed, change design to first store then try to send to DB
         var jsonDataList = [JSON.stringify(app.session)];
 
         var request = new XMLHttpRequest();
         request.open("POST", app.dbUrl, true);
 
-        //Add headers 
+        //Add headers
         request.setRequestHeader("apiKey", app.apiKey);
-        request.setRequestHeader("correlationId", app.uuidv4); 
+        request.setRequestHeader("correlationId", app.uuidv4);
 
         request.send(jsonDataList);
     }

@@ -1,7 +1,7 @@
 (function() {
     'use strict'
 
-    var preferredLang = null;
+    var spokenLang = "";
 
     document.getElementById('butCancel').addEventListener('click', function() {
         app.cancelCheckin();
@@ -9,47 +9,51 @@
 
     //Selections
     document.getElementById('spanish').addEventListener('click', function() {
-        preferredLang = "spanish";
+        spokenLang = "spanish";
     });
 
     document.getElementById('korean').addEventListener('click', function() {
-        preferredLang = "korean";
+        spokenLang = "korean";
     });
 
     document.getElementById('cantonese').addEventListener('click', function() {
-        preferredLang = "cantonese";
+        spokenLang = "cantonese";
     });
 
     document.getElementById('german').addEventListener('click', function() {
-        preferredLang = "german";
+        spokenLang = "german";
     });
 
-    document.getElementById('mandrin').addEventListener('click', function() {
-        preferredLang = "mandrin";
+    document.getElementById('mandarin').addEventListener('click', function() {
+        spokenLang = "mandarin";
     });
 
     document.getElementById('arabic').addEventListener('click', function() {
-        preferredLang = "arabic";
+        spokenLang = "arabic";
     });
 
     document.getElementById('filipinoD').addEventListener('click', function() {
-        preferredLang = "filipino dialect";
+        spokenLang = "filipino dialect";
     });
 
     document.getElementById('russian').addEventListener('click', function() {
-        preferredLang = "russian";
+        spokenLang = "russian";
     });
 
     document.getElementById('vietnamese').addEventListener('click', function() {
-        preferredLang = "vietnamese";
+        spokenLang = "vietnamese";
     });
 
     document.getElementById('japanese').addEventListener('click', function() {
-        preferredLang = "japanese";
+        spokenLang = "japanese";
     });
 
-    document.getElementById('other').addEventListener('click', function() {
-        preferredLang = document.getElementById('lang-input').nodeValue;
+    document.getElementById('lang-input').addEventListener('focus', function() {
+        document.getElementById('other').classList.add("active");
+    });
+
+    document.getElementById('lang-input').addEventListener('blur', function() {
+        document.getElementById('other').classList.remove("active");
     });
 
     //Navigation
@@ -57,8 +61,12 @@
         app.loadPreviousPage('gender.html');
     });
 
-    // TODO change this to save the actual values instead of id
     document.getElementById('langNext').addEventListener('click', function() {
-        app.loadNextPage('preferredLang', preferredLang, 'confirm.html');
+        var input = document.getElementById('lang-input').value;
+        if (input.length > 0) {
+            spokenLang = input;
+        }
+
+        app.loadNextPage('spokenLanguage', spokenLang, 'confirm.html');
     });
 })();

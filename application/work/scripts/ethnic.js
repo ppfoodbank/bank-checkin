@@ -1,7 +1,7 @@
 (function() {
     'use strict'
 
-    var ethnicGroup = null;
+    var ethnicGroup = "";
 
     document.getElementById('butCancel').addEventListener('click', function() {
         app.cancelCheckin();
@@ -9,42 +9,35 @@
 
     //Selections
     document.getElementById('shl').addEventListener('click', function() {
-        this.classList.toggle('active');
-        ethnicGroup = null;
+        ethnicGroup = "shl";
     });
 
-    document.getElementById('ian').addEventListener('click', function() {
-        this.classList.toggle('active');
-        ethnicGroup = null;
+    document.getElementById('aian').addEventListener('click', function() {
+        ethnicGroup = "aian";
     });
 
     document.getElementById('aaa').addEventListener('click', function() {
-        this.classList.toggle('active');
-        ethnicGroup = null;
+        ethnicGroup = "aaa";
     });
 
     document.getElementById('bao').addEventListener('click', function() {
-        this.classList.toggle('active');
-        ethnicGroup = null;
+        ethnicGroup = "bao";
     });
 
     document.getElementById('nhpi').addEventListener('click', function() {
-        this.classList.toggle('active');
-        ethnicGroup = null;
+        ethnicGroup = "nhpi";
     });
 
     document.getElementById('wc').addEventListener('click', function() {
-        this.classList.toggle('active');
-        ethnicGroup = null;
+        ethnicGroup = "wc";
     });
 
-    //Other Text Field
-    document.getElementById('o').addEventListener('click', function() {
-        this.classList.toggle('active');
+    document.getElementById('ethnic-input').addEventListener('focus', function() {
+        document.getElementById('o').classList.add("active");
     });
 
-    document.getElementById('ethnic-input').addEventListener('oninput', function() {
-        document.getElementById('o').classList.toggle('active');
+    document.getElementById('ethnic-input').addEventListener('blur', function() {
+        document.getElementById('o').classList.remove("active");
     });
 
     //Navigation
@@ -53,9 +46,10 @@
     });
 
     document.getElementById('ethnicNext').addEventListener('click', function() {
-        if ((document.getElementById('ethnic-input').nodeValue).length > 0) {
-            ethnicGroup
+        var input = document.getElementById('ethnic-input').value;
+        if (input.length > 0) {
+            ethnicGroup = input;
         }
-        app.loadNextPage('ethnicGroups', ethnicGroup, 'gender.html');
+        app.loadNextPage('Race', ethnicGroup, 'gender.html');
     });
 })();
