@@ -19,6 +19,10 @@
         housed = false;
     });
 
+    document.getElementById('butNot').addEventListener('click', function() {
+        app.skipPage('family.html');
+    });
+
     document.getElementById('housedNextButton').addEventListener('click', function() {
         app.loadNextPage('isHoused', housed, 'family.html');
     });

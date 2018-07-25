@@ -74,6 +74,13 @@ body {
     padding: 0.2em 0.5em 0 0.5em;
 }
 
+.big-text {
+    font-size: 40pt;
+    text-align: center;
+    font-weight: bold;
+    color: #3E479D;
+}
+
 .other-text {
     font-size: 25px;
     display: inline-block;
@@ -87,16 +94,17 @@ body {
 .text {
     text-align: center;
     font-weight: bold;
-    color: #3E479D
+    color: #3E479D;
 }
 
 .loc-text {
     text-align: center;
-    color: #3E479D
+    color: #3E479D;
 }
 
 .main {
     padding-top: 2em;
+    text-align: center;
     background: #3E479D;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -169,6 +177,10 @@ body {
     padding-top: 5px;
 }
 
+.big-spacer {
+    padding-top: 40px;
+}
+
 .left {
     padding-right: 10%;
     display: inline-block;
@@ -179,10 +191,22 @@ body {
     display: inline-block;
 }
 
+.bottom {
+    padding-top: 5%;
+}
+
 .footer-text {
     font-size: 16pt;
     text-align: center;
     color: white;
+}
+
+.butNot {
+    font-size: 18pt;
+    color: white;
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
 }
 
 .question-button-container {

@@ -42,15 +42,19 @@
         document.getElementById('familyFourthButton').classList.remove('active');
     });
 
+    document.getElementById('butNot').addEventListener('click', function() {
+        app.skipPage('ethnic.html');
+    });
+
     document.getElementById('familyBackButton').addEventListener('click', function() {
         app.loadPreviousPage('housed.html');
     });
 
     document.getElementById('familyNextButton').addEventListener('click', function() {
-        familyCat1 = document.getElementById('familyFirst-input').value;
-        familyCat2 = document.getElementById('familySecond-input').value;
-        familyCat3 = document.getElementById('familyThird-input').value;
-        familyCat4 = document.getElementById('familyFourth-input').value;
-        app.loadNextPage('FamilySizeCategory1Count', familyCat1, 'ethnic.html');
+        app.session["Category1Count"] = document.getElementById('familyFirst-input').value;
+        app.session["Category2Count"] = document.getElementById('familySecond-input').value;
+        app.session["Category3Count"] = document.getElementById('familyThird-input').value;
+        app.session["Category4Count"] = document.getElementById('familyFourth-input').value;
+        app.skipPage('ethnic.html');
     });
 })();

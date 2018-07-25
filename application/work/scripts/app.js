@@ -1,4 +1,3 @@
-
 (function() {
     var sessionData = {
         "zipCode": "",
@@ -44,6 +43,10 @@
         window.location = page;
     }
 
+    app.skipPage = function(page) {
+        window.location = page;
+    }
+
     // Assign session key, write cookie, and advance
     app.loadNextPage = function(key, value, page) {
         app.session[key] = value;
@@ -58,24 +61,26 @@
     }
 
 
-//Save session data to storage and send to DB
-app.commit = function(){
-    //TODO: Test and if needed, change design to first store then try to send to DB
-    var jsonDataList =  JSON.stringify([app.session]);
+    //Save session data to storage and send to DB
+    app.commit = function() {
+        //TODO: Test and if needed, change design to first store then try to send to DB
+        var jsonDataList = JSON.stringify([app.session]);
 
+        var request = new XMLHttpRequest();
+
+        request.open("POST", window.app.dbUrl);
         //Add headers
-        request.setRequestHeader("apiKey", app.apiKey);
-        request.setRequestHeader("correlationId", app.uuidv4);
+        request.setRequestHeader("window.app.apiKey", app.apiKey);
+        request.setRequestHeader("correlationId", "");
+        request.setRequestHeader("Content-Type", "application/json");
+        //request.setRequestHeader("Content-Type", "text/plain");
 
-    //Add headers 
-    request.setRequestHeader("apiKey", app.apiKey);
-    request.setRequestHeader("correlationId", app.uuidv4); 
-    request.setRequestHeader("Content-Type", "application/json");
-}
+        request.send(jsonDataList);
+    }
 
-window.addEventListener('load', function() {
-    console.log('Loading the cookie...');
-    app.loadCookie();
-});
+    window.addEventListener('load', function() {
+        console.log('Loading the cookie...');
+        app.loadCookie();
+    });
 
 })();
