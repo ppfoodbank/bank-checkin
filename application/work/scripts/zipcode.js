@@ -34,7 +34,7 @@
     document.getElementById('zipcodeOther-input').addEventListener('focus', function() {
         document.getElementById('zipcodeOther').classList.add('active');
     });
-x
+
     document.getElementById('zipcodeOther-input').addEventListener('blur', function() {
         document.getElementById('zipcodeOther').classList.remove('active');
     });
