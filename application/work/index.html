@@ -1,58 +1,40 @@
-<!--
- Copyright 2016 Google Inc.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
--->
-
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pike Place Food Bank</title>
+    <title>Start check in</title>
     <link rel="stylesheet" type="text/css" href="styles/inline.css">
-
-    <!-- Manifest information -->
-    <link rel="manifest" href="/manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Weather PWA">
-    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
 </head>
 
 <body>
     <header class="header">
-        <button class="button" id="butCancel" aria-label="Cancel">Cancel</button>
+        <h1 class="header__title">Welcome to Pike Market Food Bank</h1>
     </header>
 
     <main class="main">
         <div class="content">
+            <!-- TODO: Make text responsive -->
+            <div class="text">Welcome</div>
+            <div class="loc-text">Bienvenido</div>
+            <div class="loc-text">(Simplified Chinese)</div>
+            <!-- TODO: Make image responsive -->
+            <center><img src="./images/icon-placeholder.PNG"/ width="33%" height="33%"/></center>
         </div>
     </main>
 
     <footer class="footer">
-        <div class="left">
-            <button class="button" id="butBack" aria-label="Cancel">Back</button>
-        </div>
-        <div class="right">
-            <button class="button" id="butNext" aria-label="Cancel">Next</button>
-        </div>
+        <center>
+            <button class="button" id="startCheckin" aria-label="Start checkin">Begin Check-in</button>
+            <br/><br/>
+            <div id="numCheckin" class="footer-text"/>
+        </center>
     </footer>
 
-    <!-- Uncomment the line below when ready to test with fake data -->
     <script src="scripts/app.js" async></script>
+    <script src="scripts/checkin.js" async></script>
+    
 </body>
-
 </html>
