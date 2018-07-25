@@ -195,11 +195,18 @@ body {
     width: 180px;
     height: 180px;
     margin: auto 20%;
-    font-size: 20pt;
-    background-color: white;
-    border: 1px solid;
+}
+
+.square-button:focus {
+    background-color: #F36D38;
+    color: white;
 }
 
 .button-row {
     margin-bottom: 20px;
+    text-align: center;
+}
+
+#genderOtherButton {
+    margin: auto;
 }

@@ -23,27 +23,38 @@
     <main class="main">
         <div class="container content">
             <div class="question-heading loc-text">
-                <div class="text">Your family:</div>
+                <div class="text">Your family / Tu familia / 你的家人 :</div>
                 <div class="text">How many people in each age group?</div>
-                <div class="loc-text">Tu familia:</div>
                 <div class="loc-text">¿Cuántas personas en cada grupo de edad?</div>
-                <div class="loc-text">(simplified Chinese)</div>
+                <div class="loc-text">每个年龄段有多少人</div>
             </div>
             <div class="question-button-container">
                 <div class="row button-row">
                     <div class="col-md">
-                        <button class="square-button" type="submit">0-2</button>
+                        <button class="butGroup square-button" id="familyFirstButton" type="submit">
+                                <div class="other-text">0-2</div>
+                                <input class="form-control" type="text" id="familyFirst-input">
+                        </button>
                     </div>
                     <div class="col-md">
-                        <button class="square-button" type="submit">3-18</button>
+                        <button class="butGroup square-button" id="familySecondButton" type="submit">
+                                <div class="other-text">3-18</div>
+                                <input class="form-control" type="text" id="familySecond-input">
+                        </button>
                     </div>
                 </div>
                 <div class="row button-row">
                     <div class="col-md">
-                        <button class="square-button" type="submit">19-54</button>
+                        <button class="butGroup square-button" id="familyThirdButton" type="submit">
+                                <div class="other-text">19-54</div>
+                                <input class="form-control" type="text" id="familyThird-input">
+                        </button>
                     </div>
                     <div class="col-md">
-                        <button class="square-button" type="submit">55+</button>
+                        <button class="butGroup square-button" id="familyFourthButton" type="submit">
+                                <div class="other-text">55+</div>
+                                <input class="form-control" type="text" id="familyFourth-input">
+                        </button>
                     </div>
                 </div>
             </div>
