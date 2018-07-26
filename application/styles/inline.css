@@ -260,8 +260,8 @@ body {
 }
 
 .button-highlighted {
-    background-color: #ff6c2d;
-    color: white;
+    background-color: #ff6c2d !important;
+    color: white !important;
 }
 
 .square-button:focus {
