@@ -9,6 +9,9 @@
         window.location = 'zipcode.html';
     });
 
+    /*
+        TODO: Until it actually works to cache the page correctly and only once, disable the service worker.
+
     // Register service worker
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
@@ -20,4 +23,5 @@
     navigator.serviceWorker.ready.then(function(swRegistration) {
         return swRegistration.sync.register('syncDB');
     });
+    */
 })();

@@ -205,10 +205,10 @@ body {
     cursor: pointer;
 }
 
-.butGroup:focus {
+ .butGroup:focus {
     background-color: #F36D38;
     color: white;
-}
+} 
 
 .active {
     background-color: #F36D38;
@@ -259,6 +259,11 @@ body {
     width: 180px;
     height: 180px;
     margin: auto 20%;
+}
+
+.button-highlighted {
+    background-color: #ff6c2d;
+    color: white;
 }
 
 .square-button:focus {

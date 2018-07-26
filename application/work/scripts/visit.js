@@ -16,12 +16,14 @@
         if (selected) app.loadNextPage('isDuplicated', !firstVisit, 'housed.html');
     });
 
-    document.getElementById('visitYesButton').addEventListener('click', function() {
+    document.getElementById('visitYesButton').addEventListener('click', function(e) {
+        app.highlight(e.currentTarget);
         firstVisit = true;
         selected = true;
     });
 
-    document.getElementById('visitNoButton').addEventListener('click', function() {
+    document.getElementById('visitNoButton').addEventListener('click', function(e) {
+        app.highlight(e.currentTarget);
         firstVisit = false;
         selected = true;
     });

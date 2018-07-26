@@ -81,6 +81,25 @@
     window.addEventListener('load', function() {
         console.log('Loading the cookie...');
         app.loadCookie();
-    });
 
+        console.log('Setting up buttons...')
+        var elements = document.getElementsByClassName('square-button');
+        Array.prototype.forEach.call(elements, element => {
+            element.addEventListener('click', function(e) {
+                app.highlight(e.currentTarget);
+            })
+        })
+    });
+    
+    app.clearHighlights = function() {
+        var elements = document.getElementsByClassName('square-button');
+        Array.prototype.forEach.call(elements, element => {
+            element.classList.remove('button-highlighted');
+        });
+    };
+
+    app.highlight = function(element) {
+        app.clearHighlights();
+        element.classList.add('button-highlighted');
+    }
 })();
