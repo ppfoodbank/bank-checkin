@@ -20,7 +20,6 @@
         addDialog: document.querySelector('.dialog-container'),
         dbUrl: "https://pmfbapi.azurewebsites.net/api/Customer/adduser/",
         apiKey: "hE6U7t7PcEZviH17SJAh",
-        userId: undefined,
         session: sessionData,
         numCheckin: 0
     };
@@ -60,7 +59,6 @@
         app.clearCookie();
         window.location = 'index.html';
     }
-
 
     //Save session data to storage and send to DB
     app.commit = function(){

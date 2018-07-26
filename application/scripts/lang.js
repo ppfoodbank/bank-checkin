@@ -8,6 +8,10 @@
     });
 
     //Selections
+    document.getElementById('english').addEventListener('click', function() {
+        spokenLang = "english";
+    });
+
     document.getElementById('spanish').addEventListener('click', function() {
         spokenLang = "spanish";
     });
