@@ -88,14 +88,12 @@ body {
 .small-text {
     font-size: 80%;
     text-align: center;
-    font-weight: bold;
     color: #3E479D;
 }
 
 .big-text {
     font-size: 40pt;
     text-align: center;
-    font-weight: bold;
     color: #3E479D;
 }
 
@@ -104,22 +102,47 @@ body {
     display: inline-block;
 }
 
-.form-control {
-    font-size: 25px;
+.number-input {
     display: inline-block;
+    width: 100%;
+    height: 50%;
+    padding-left: .15rem;
+    font-size: 20pt;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
+.text-input {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    padding-left: .15rem;
+    font-size: 20pt;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+}
 .text {
     text-align: center;
     font-weight: bold;
     color: #3E479D;
 }
-
 .loc-text {
     text-align: center;
     color: #3E479D;
 }
-
 .main {
     padding-top: 2em;
     text-align: center;
@@ -129,7 +152,6 @@ body {
     -ms-flex: 1;
     flex: 1;
 }
-
 .content {
     overflow: scroll;
     height: 650px;
@@ -141,7 +163,6 @@ body {
     margin: 30px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .footer {
     background: #3E479D;
     width: 100%;
@@ -151,7 +172,6 @@ body {
     padding-top: 10px;
     color: #FFF;
 }
-
 .button {
     height: 65px;
     border: none;
@@ -166,12 +186,12 @@ body {
     font-size: 20pt;
     cursor: pointer;
 }
-
 .butGroup {
     width: 100%;
     height: 65px;
     border: none;
     border-radius: 8px;
+    background-color: rgb(221, 221, 221);
     color: black;
     padding: 15px 32px;
     text-align: center;
@@ -180,45 +200,36 @@ body {
     font-size: 20pt;
     cursor: pointer;
 }
-
 .butGroup:focus {
     background-color: #F36D38;
     color: white;
 }
-
 .active {
     background-color: #F36D38;
     color: white;
 }
-
 .spacer {
     padding-top: 5px;
 }
-
 .big-spacer {
     padding-top: 40px;
 }
-
 .left {
     padding-right: 10%;
     display: inline-block;
 }
-
 .right {
     padding-left: 10%;
     display: inline-block;
 }
-
 .bottom {
     padding-top: 5%;
 }
-
 .footer-text {
     font-size: 16pt;
     text-align: center;
     color: white;
 }
-
 .butNot {
     font-size: 18pt;
     color: white;
@@ -226,27 +237,22 @@ body {
     background-color: transparent;
     text-decoration: underline;
 }
-
 .question-button-container {
     margin-top: 40px;
 }
-
 .square-button {
     width: 180px;
     height: 180px;
     margin: auto 20%;
 }
-
 .square-button:focus {
     background-color: #F36D38;
     color: white;
 }
-
 .button-row {
     margin-bottom: 20px;
     text-align: center;
 }
-
 #genderOtherButton {
     margin: auto;
 }
