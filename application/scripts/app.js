@@ -83,16 +83,22 @@
         app.loadCookie();
 
         console.log('Setting up buttons...')
-        var elements = document.getElementsByClassName('square-button');
-        Array.prototype.forEach.call(elements, element => {
-            element.addEventListener('click', function(e) {
-                app.highlight(e.currentTarget);
-            })
-        })
+        var applyHighlight = function(className) {
+            console.log('Applying highlighting for ' + className)
+            var elements = document.getElementsByClassName(className);
+            Array.prototype.forEach.call(elements, element => {
+                element.addEventListener('click', function(e) {
+                    app.highlight(e.currentTarget);
+                });
+            });
+        }
+
+        applyHighlight('square-button');
+        applyHighlight('butGroup');
     });
     
     app.clearHighlights = function() {
-        var elements = document.getElementsByClassName('square-button');
+        var elements = document.getElementsByClassName('button-highlighted');
         Array.prototype.forEach.call(elements, element => {
             element.classList.remove('button-highlighted');
         });

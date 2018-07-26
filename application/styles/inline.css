@@ -187,7 +187,6 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 20pt;
-    cursor: pointer;
 }
 
 .butGroup {
@@ -202,7 +201,6 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 20pt;
-    cursor: pointer;
 }
 
  .butGroup:focus {
