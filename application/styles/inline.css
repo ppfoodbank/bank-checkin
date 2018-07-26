@@ -168,7 +168,6 @@ body {
 .footer {
     background: #3E479D;
     width: 100%;
-    height: 2em;
     text-align: center;
     padding-bottom: 12vh;
     padding-top: 1vh;
@@ -203,10 +202,10 @@ body {
     font-size: 20pt;
 }
 
- .butGroup:focus {
+.butGroup:focus {
     background-color: #F36D38;
     color: white;
-} 
+}
 
 .active {
     background-color: #F36D38;
