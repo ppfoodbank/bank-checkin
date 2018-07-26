@@ -24,10 +24,10 @@
 
         // POST: api/Customer
         [RequireHttps]
-        [HttpPost("adduser")]
+        [HttpPost("checkin")]
         [EnableCors("MyPolicy")]
 
-        public IActionResult adduser([FromBody]CheckinInfo checkinInfo)
+        public IActionResult checkin([FromBody]CheckinInfo checkinInfo)
         {
             try
             {
@@ -37,41 +37,30 @@
                 // Authenticate
                 if (!string.Equals(AppConfigStore.ApiKey, apiKey))
                     return this.Unauthorized();
-
-                //var requestBodyLength = checkinInfoString.Length;
-                //checkinInfoString = checkinInfoString.Remove(0, 1).Remove(requestBodyLength - 1, 1);
-
-                //checkinInfo = JsonConvert.DeserializeObject<List<CheckinInfo>>(checkinInfoString);
-
+                
                 // Validate request details
-                //if (checkinInfo == null ||
-                //    checkinInfo?.Count() < 1)
-                //{
-                //    return this.BadRequest("Empty request object");
-                //}
+                if (checkinInfo == null)
+                {
+                    return this.BadRequest("Invalid request object");
+                }
 
                 // Save to db
-                //foreach (var item in checkinInfo)
-                //{
-                //    dbContext.Database.ExecuteSqlCommand(
-                //    "dbo.uspAddUser @p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10",
-                //     parameters: new object[] {
-                //     item.ZipCode,
-                //     item.AgeBracket,
-                //     item.IsDuplicated,
-                //     item.IsHoused,
-                //     item.FamilySizeCategory1Count,
-                //     item.FamilySizeCategory2Count,
-                //     item.FamilySizeCategory3Count,
-                //     item.FamilySizeCategory4Count,
-                //     item.Race,
-                //     item.Gender,
-                //     item.SpokenLanguage
-                //     });
-                //}
-
-
-
+                    dbContext.Database.ExecuteSqlCommand(
+                    "dbo.uspAddUser @p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10",
+                     parameters: new object[] {
+                     checkinInfo.ZipCode,
+                     checkinInfo.AgeBracket,
+                     checkinInfo.IsDuplicated,
+                     checkinInfo.IsHoused,
+                     checkinInfo.FamilySizeCategory1Count,
+                     checkinInfo.FamilySizeCategory2Count,
+                     checkinInfo.FamilySizeCategory3Count,
+                     checkinInfo.FamilySizeCategory4Count,
+                     checkinInfo.Race,
+                     checkinInfo.Gender,
+                     checkinInfo.SpokenLanguage
+                     });
+                
                 return this.NoContent();
             }
             catch (Exception ex)
